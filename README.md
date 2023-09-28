@@ -1,2 +1,2 @@
-# DevOps-2
-Tugas Formatif 2
+# DevOps
+ Tugas Mandiri M01
