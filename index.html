@@ -1,71 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Shop</title>
     <style>
-        .calculator {
-            width: 300px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            padding: 20px;
         }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+        .featured-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        input[type="button"] {
-            width: 48px;
-            height: 48px;
-            font-size: 18px;
-            margin-right: 5px;
-            margin-bottom: 5px;
+        .featured-item {
+            flex: 0 0 calc(33.33% - 20px);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .featured-item img {
+            max-width: 100%;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
-        <input type="button" value="7" onclick="appendToDisplay('7')">
-        <input type="button" value="8" onclick="appendToDisplay('8')">
-        <input type="button" value="9" onclick="appendToDisplay('9')">
-        <input type="button" value="/" onclick="appendToDisplay('/')">
-        <br>
-        <input type="button" value="4" onclick="appendToDisplay('4')">
-        <input type="button" value="5" onclick="appendToDisplay('5')">
-        <input type="button" value="6" onclick="appendToDisplay('6')">
-        <input type="button" value="-" onclick="appendToDisplay('-')">
-        <br>
-        <input type="button" value="1" onclick="appendToDisplay('1')">
-        <input type="button" value="2" onclick="appendToDisplay('2')">
-        <input type="button" value="3" onclick="appendToDisplay('3')">
-        <input type="button" value="+" onclick="appendToDisplay('+')">
-        <br>
-        <input type="button" value="0" onclick="appendToDisplay('0')">
-        <input type="button" value="." onclick="appendToDisplay('.')">
-        <input type="button" value="=" onclick="calculate()">
-        <input type="button" value="C" onclick="clearDisplay()">
+    <header>
+        <h1>Welcome to Culinary Shop</h1>
+        <p>Your Source for Delicious Food</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Specials</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Featured Items</h2>
+        <div class="featured-items">
+            <div class="featured-item">
+                <img src="food1.jpg" alt="Featured Item 1">
+                <h3>Delicious Dish 1</h3>
+                <p>Description of this delicious dish.</p>
+            </div>
+            <div class="featured-item">
+                <img src="food2.jpg" alt="Featured Item 2">
+                <h3>Special Dish 2</h3>
+                <p>Description of this special dish.</p>
+            </div>
+            <div class="featured-item">
+                <img src="food3.jpg" alt="Featured Item 3">
+                <h3>Tasty Dish 3</h3>
+                <p>Description of this tasty dish.</p>
+            </div>
+        </div>
     </div>
 
-    <script>
-        function appendToDisplay(value) {
-            document.getElementById('display').value += value;
-        }
-
-        function calculate() {
-            var display = document.getElementById('display');
-            try {
-                display.value = eval(display.value);
-            } catch (error) {
-                display.value = 'Error';
-            }
-        }
-
-        function clearDisplay() {
-            document.getElementById('display').value = '';
-        }
-    </script>
+    <footer>
+        &copy; 2023 Culinary Shop. All rights reserved.
+    </footer>
 </body>
 </html>
